@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const got = require('got');
 const https = require('https');
+require('dotenv').config();
 
 const app = express();
 
@@ -37,7 +38,7 @@ app.post('/', function(req, res){
     const options = {
         method: 'POST',
         body: data,
-        auth: 'rolfikv:d4c5e9826944210084bb628610dd36db-us1'
+        auth: `${process.env.USER}:${process.env.API_KEY}`
         
     };
     
